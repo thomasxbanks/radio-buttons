@@ -1,0 +1,48 @@
+$font-size-std: 16px;
+$font-size-med: 20px;
+$pad: 10px;
+$color-brand: #445566;
+$color-white: #ffffff;
+
+.form_column {
+  padding: ($pad * 4);
+  margin: $pad auto;
+}
+
+.checkbox_wrapper {
+  font-size: 0;
+  margin-bottom: $pad;
+  input[type="radio"]{
+	display: none;
+  }
+  input[type="radio"] + label {
+	width: 300px;
+	font-size: $font-size-std;
+	line-height: $font-size-med;
+	padding-bottom: $pad;
+  }
+  input[type="radio"] + label span {
+	position: relative;
+	border: 2px solid $color-brand;
+	display: inline-block;
+	width: ($font-size-med + 6);
+	height: ($font-size-med + 6);
+	padding: 0;
+	margin: 0 $pad 0 0;
+	vertical-align: middle;
+	&:before {
+	  content: " ";
+	  font-family: FontAwesome;
+	  color: $color-brand;
+	  position: absolute;
+	  top: 1px;
+	  left: 1px;
+	  font-size: $font-size-med;
+	}
+  }
+  input[type="radio"]:checked + label span {
+	&:before {
+	  content: "\f00c";
+	}
+  }
+}
